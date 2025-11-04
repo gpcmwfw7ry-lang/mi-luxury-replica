@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Réplica - Réplicas Premium AAA | Lujo a tu Alcance</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0f0f0f; --accent: #d4af37; --light: #fafafa; --dark: #111; --gold: #b8860b; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--light); color: var(--dark); overflow-x: hidden; }
+        header { background: var(--primary); color: white; padding: 1rem 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; font-size: 2rem; font-weight: 900; color: white; text-shadow: 0 0 10px var(--gold); }
+        .logo svg { width: 50px; height: 50px; margin-right: 10px; animation: glow 2s ease-in-out infinite alternate; }
+        .logo .lr { fill: var(--accent); }
+        .logo span { color: var(--accent); font-weight: 900; }
+        @keyframes glow { from { filter: drop-shadow(0 0 5px var(--gold)); } to { filter: drop-shadow(0 0 20px var(--gold)); } }
+        nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: 0.3s; text-shadow: 0 0 5px rgba(212,175,55,0.5); }
+        nav a:hover { color: var(--accent); transform: scale(1.1); }
+        .hero { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; margin-top: 80px; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="gold" opacity="0.1"/></svg>') repeat; animation: particles 20s linear infinite; }
+        @keyframes particles { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(-100px) rotate(360deg); } }
+        .hero h1 { font-size: 4rem; margin-bottom: 1rem; font-weight: 900; text-shadow: 0 0 20px var(--gold); animation: fadeInUp 1s ease; }
+        .hero p { font-size: 1.4rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.95; animation: fadeInUp 1s ease 0.5s both; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .btn { background: var(--accent); color: #000; padding: 15px 40px; border: none; border-radius: 50px; font-weight: 900; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; box-shadow: 0 5px 20px rgba(212,175,55,0.4); font-size: 1.2rem; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(212,175,55,0.7); } 70% { box-shadow: 0 0 0 10px rgba(212,175,55,0); } 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0); } }
+        .btn:hover { background: #e0c56a; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(212,175,55,0.6); }
+        .shipping-alert { background: linear-gradient(135deg, #fff8e1, #fff3cd); color: #8B6F00; text-align: center; padding: 15px; font-weight: 700; position: fixed; top: 80px; width: 100%; z-index: 999; font-size: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .container { padding: 120px 5% 50px; max-width: 1400px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 4rem; font-size: 3rem; color: var(--primary); font-weight: 900; position: relative; }
+        .section-title::after { content: ''; width: 100px; height: 4px; background: linear-gradient(to right, var(--accent), var(--gold)); display: block; margin: 20px auto 0; border-radius: 2px; }
+        .why-us { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); margin-bottom: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .why-item { text-align: center; animation: fadeIn 1s ease; }
+        .why-item i { font-size: 3rem; color: var(--accent); margin-bottom: 1rem; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        .filters { text-align: center; margin-bottom: 3rem; }
+        .filter-btn { background: white; border: 2px solid var(--primary); color: var(--primary); padding: 12px 28px; margin: 0 10px; border-radius: 50px; cursor: pointer; font-weight: 700; transition: all 0.3s; font-size: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .filter-btn.active, .filter-btn:hover { background: var(--accent); color: #000; transform: scale(1.05); box-shadow: 0 5px 20px rgba(212,175,55,0.3); }
+        .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-top: 2rem; }
+        .product { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.5s ease; position: relative; transform-style: preserve-3d; }
+        .product:hover { transform: rotateY(10deg) rotateX(5deg) translateY(-15px); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+        .product img { width: 100%; height: 250px; object-fit: cover; transition: all 0.5s ease; }
+        .product:hover img { transform: scale(1.1) rotate(2deg); }
+        .product-info { padding: 20px; }
+        .product-title { font-weight: 700; margin-bottom: 10px; font-size: 1.2rem; color: var(--primary); }
+        .price { color: var(--accent); font-size: 1.6rem; font-weight: 900; }
+        .old-price { text-decoration: line-through; color: #999; font-size: 1rem; margin-left: 10px; }
+        .badge { position: absolute; top: 15px; left: 15px; background: var(--gold); color: white; padding: 5px 12px; border-radius: 25px; font-size: 0.8rem; font-weight: 700; animation: bounce 1s infinite; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-5px); } 60% { transform: translateY(-3px); } }
+        .cart-float { position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 999; transition: 0.3s; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .cart-count { position: absolute; top: -5px; right: -5px; background: var(--accent); color: #000; width: 30px; height: 30px; border-radius: 50%; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+        .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; padding: 20px; }
+        .modal-content { background: white; padding: 3rem; border-radius: 20px; max-width: 550px; width: 90%; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: slideIn 0.3s ease; }
+        @keyframes slideIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        .close { position: absolute; top: 20px; right: 25px; font-size: 2rem; cursor: pointer; color: #aaa; transition: 0.3s; }
+        .close:hover { color: var(--accent); transform: rotate(90deg); }
+        footer { background: var(--primary); color: #ccc; text-align: center; padding: 4rem 5% 2rem; margin-top: 6rem; }
+        footer p { margin: 10px 0; font-size: 1rem; }
+        footer a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        @media (max-width: 768px) { .hero h1 { font-size: 3rem; } nav { display: none; } .products { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); } }
+    </style>
+</head>
+<body>
+
+    <div class="shipping-alert">
+        <i class="fas fa-shipping-fast"></i> ENVÍO DISCRETO EN 15 DÍAS · GRATIS DESDE 100€ · CALIDAD AAA+ INDISTINGUIBLE
+    </div>
+
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path class="lr" d="M25 20 Q25 10 35 10 Q45 10 45 20 L45 40 Q45 50 35 50 Q25 50 25 40 Z M25 60 L45 60 L45 80 Q45 90 35 90 Q25 90 25 80 Z" />
+                <path class="lr" d="M55 20 L75 20 L75 80 L55 80 Z" />
+                <circle cx="65" cy="15" r="5" fill="var(--gold)" /> <!-- Corona -->
+            </svg>
+            Luxury <span>Réplica</span>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Catálogo</a>
+            <a href="#why">Por Qué Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div>
+            <h1>¡Lujo Accesible!</h1>
+            <p>Descubre réplicas AAA+ que nadie nota la diferencia. Calidad premium, precios imbatibles, envío discreto a toda Europa. ¡Transforma tu estilo hoy!</p>
+            <a href="#productos" class="btn">EXPLORA EL CATÁLOGO</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="why-us" id="why">
+            <h2 class="section-title">¿Por Qué Elegir Luxury Réplica?</h2>
+            <div class="why-item">
+                <i class="fas fa-crown"></i>
+                <h3>Calidad AAA+</h3>
+                <p>Réplicas indistinguibles de los originales, materiales premium.</p>
+            </div>
+            <div class="why-item">
+                <i class="fas fa-shield-alt"></i>
+                <p>Envío 100% Discreto</p>
+                <p>Paquetes anónimos, sin logos. Llega en 15 días a tu puerta.</p>
+            </div>
+            <div class="why-item">
+                <i class="fas fa-euro-sign"></i>
+                <h3>Precios Imbatibles</h3>
+                <p>Hasta 80% menos que el original. Lujo sin arruinarte.</p>
+            </div>
+        </section>
+
+        <section id="productos">
+            <h2 class="section-title">Catálogo Exclusivo</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="bolsos">Bolsos</button>
+                <button class="filter-btn" data-category="relojes">Relojes</button>
+                <button class="filter-btn" data-category="zapatillas">Zapatillas</button>
+                <button class="filter-btn" data-category="perfumes">Perfumes</button>
+            </div>
+            <div class="products" id="product-list"></div>
+        </section>
+    </div>
+
+    <div class="cart-float" id="cart-btn">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Tu Carrito de Lujo</h2>
+            <div id="cart-items" style="margin:20px 0;"></div>
+            <p style="font-size:1.4rem; font-weight:900; text-align:right; color:var(--accent);">
+                Total: <span id="cart-total">0€</span>
+            </p>
+            <button class="btn" style="width:100%; margin-top:1rem;" onclick="checkout()">
+                <i class="fab fa-whatsapp"></i> FINALIZAR POR WHATSAPP
+            </button>
+            <p style="text-align:center; margin-top:15px; font-size:0.9rem; color:#777;">
+                Confirmamos en 5 min · Envío 15 días · Pago seguro
+            </p>
+        </div>
+    </div>
+
+    <footer id="contacto">
+        <p><strong>Luxury Réplica</strong> · Lujo asequible desde 2025</p>
+        <p>📧 contacto@luxuryreplica.es | 📱 <a href="https://wa.me/34600000000">+34 600 000 000</a></p>
+        <p>🚚 Envío 15 días · 💳 Pago seguro
+				· 🔒 Discreto al 100%</p>
+        <p>&copy; 2025 Luxury Réplica. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Productos con los tuyos + 80% descuento + más para catálogo
+        const products = [
+            { id:1, title:"Bolso Gucci Marmont Réplica AAA+ (Producto 1)", price:400, oldPrice:2000, category:"bolsos", img:"https://c.onlyaff.app/3A5nvB", badge:"NUEVO" },
+            { id:2, title:"Bolso Gucci Ophidia Réplica Premium (Producto 2)", price:360, oldPrice:1800, category:"bolsos", img:"https://c.onlyaff.app/3A50CY", badge:"TOP" },
+            { id:3, title:"Reloj Rolex Submariner Réplica AAA", price:500, oldPrice:2500, category:"relojes", img:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80", badge:"LUJO" },
+            { id:4, title:"Zapatillas Nike Air Force 1 Réplica", price:120, oldPrice:600, category:"zapatillas", img:"https://images.unsplash.com/photo-1600269454423-8e2f2c7a3a4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80", badge:"BEST" },
+            { id:5, title:"Perfume Chanel No.5 Réplica 100ml", price:80, oldPrice:400, category:"perfumes", img:"https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80", badge:"EXCLUSIVO" },
+            { id:6, title:"Bolso Chanel Classic Flap Réplica", price:450, oldPrice:2250, category:"bolsos", img:"https://images.unsplash.com/photo-1548036328-c9fa89d12889?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80", badge:"VIP" },
+        ];
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function renderProducts(filter = 'all') {
+            const container = document.getElementById('product-list');
+            container.innerHTML = '';
+            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+            filtered.forEach((p, index) => {
+                const div = document.createElement('div');
+                div.className = 'product';
+                div.style.animationDelay = `${index * 0.1}s`;
+                div.innerHTML = `
+                    ${p.badge ? `<span class="badge">${p.badge}</span>` : ''}
+                    <img src="${p.img}" alt="${p.title}" loading="lazy">
+                    <div class="product-info">
+                        <div class="product-title">${p.title}</div>
+                        <div>
+                            <span class="price">${p.price}€</span>
+                            <span class="old-price">${p.oldPrice}€</span>
+                        </div>
+                        <button class="btn" style="margin-top:15px; width:100%; font-size:1rem;" onclick="addToCart(${p.id})">
+                            AÑADIR AL CARRITO
+                        </button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert(`✅ ${product.title} añadido. ¡Lujo en tu carrito!`);
+        }
+
+        function updateCartCount() {
+            document.getElementById('cart-count').textContent = cart.length;
+        }
+
+        function renderCart() {
+            const items = document.getElementById('cart-items');
+            const total = document.getElementById('cart-total');
+            items.innerHTML = '';
+            let sum = 0;
+            if (cart.length === 0) {
+                items.innerHTML = '<p style="text-align:center; color:#999; font-style:italic;">Tu carrito de lujo está vacío. ¡Empieza a comprar!</p>';
+            } else {
+                cart.forEach((item, i) => {
+                    sum += item.price;
+                    items.innerHTML += `
+                        <div style="display:flex; justify-content:space-between; padding:15px 0; border-bottom:1px solid #eee; align-items:center;">
+                            <span style="font-size:1rem; flex:1;">${item.title}</span>
+                            <span style="font-weight:700; color:var(--accent);">${item.price}€</span>
+                            <button onclick="removeFromCart(${i})" style="color:#e74c3c; background:none; border:none; margin-left:10px; font-size:1.5rem; cursor:pointer;">✕</button>
+                        </div>
+                    `;
+                });
+            }
+            total.textContent = sum + '€';
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+            updateCartCount();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("¡Añade algo a tu carrito primero!");
+                return;
+            }
+            const message = `¡Hola Luxury Réplica! Pedido urgente:\n\n` +
+                cart.map((p, i) => `${i+1}. ${p.title} - ${p.price}€`).join('\n') +
+                `\n\nTotal: ${cart.reduce((s,p)=>s+p.price,0)}€\n\nDirección de envío: [Añade aquí]`;
+            const whatsapp = `https://wa.me/34600000000?text=${encodeURIComponent(message)}`;
+            window.open(whatsapp, '_blank');
+        }
+
+        // Eventos
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderProducts(btn.dataset.category);
+            });
+        });
+
+        document.getElementById('cart-btn').addEventListener('click', () => {
+            renderCart();
+            document.getElementById('cart-modal').style.display = 'flex';
+        });
+
+        document.getElementById('close-cart').addEventListener('click', () => {
+            document.getElementById('cart-modal').style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('cart-modal')) {
+                document.getElementById('cart-modal').style.display = 'none';
+            }
+        });
+
+        // Inicializar
+        renderProducts();
+        updateCartCount();
+    </script>
+</body>
+</html>
